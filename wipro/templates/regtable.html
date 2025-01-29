@@ -1,0 +1,29 @@
+{% extends 'admin.html' %}
+{% block contends %}
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>email</th>
+        <th>password</th>
+        <th>number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        
+        {% for i in data %}
+      <tr>
+       
+        <td>{{i.name}}</td>
+       <td>{{i.email}}</td>
+       <td>{{i.password}}</td>
+       <td>{{i.number}}</td>
+
+      </tr>
+      {% endfor %}
+      </tr>
+    </tbody>
+  </table>
+  
+  {% endblock %}

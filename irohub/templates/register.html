@@ -1,0 +1,14 @@
+{% extends 'user.html' %}
+{% block contends %}
+    <form action="{% url 'register1' %}" method="post" class=" position-relative">
+        {% csrf_token %}
+    <input type="name" class="w-100 form-control border-0 py-3 mb-4" placeholder="Your Name" name="name">
+    <input type="number" class="w-100 form-control border-0 py-3 mb-4" placeholder="Your number" name="number">
+    <input type="password" class="w-100 form-control border-0 py-3 mb-4" placeholder="Your password" name="password"> 
+    <input type="email" class="w-100 form-control border-0 py-3 mb-4" placeholder="Enter Your Email" name="email">
+    <textarea class="w-100 form-control border-0 mb-4" rows="5" cols="10" placeholder="Your Message"></textarea>
+    <button class="w-100 btn form-control border-secondary py-3 bg-white text-primary " type="submit">Submit</button>
+    {% endblock %}
+</form>
+
+

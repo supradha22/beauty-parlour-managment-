@@ -1,0 +1,43 @@
+{% extends 'user.html' %}
+{% block contends %}
+<table class="table table-bordered">
+    <thead>
+     
+      <tr>
+     
+        <th>service image</th>
+        <th>saloon name</th>
+        <th>service name</th>
+        <th>service price</th>
+        <th>booking date</th>
+        <th>booking time</th>
+        <th>status</th>
+
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        
+        {% for i in data %}
+      <tr>
+        <td><img src="{{i.userser.image2.url}}" style="height:60px;width:100px"></td>
+        <td>{{i.userser.saloon}}</td>
+        <td>{{i.userser.name2}}</td>
+        <td>{{i.userser.price}}</td>
+        <td>{{i.bookingdate}}</td>
+        <td>{{i.bookingtime}}</td>
+        <td>{% if i.status == 0 %}
+            <p><i>your booking will be waiting</i></p>
+            {% elif i.status == 1 %}
+            <p><i>your booking approved</i></p>
+            {% else %}
+             <p><i>declined</i></p>
+            {% endif %}
+      </tr>
+      {% endfor %} 
+      </tr>
+    </tbody>
+  </table>
+  
+  {% endblock %}

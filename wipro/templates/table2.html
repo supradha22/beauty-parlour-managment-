@@ -1,0 +1,35 @@
+{% extends 'admin.html' %}
+{% block contends %}
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>name2</th>
+        <th>image2</th>
+        <th>price</th>
+        <th>description</th>
+        <th>saloon</th>
+        <th>edit</th>
+        <th>delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        
+        {% for i in data2 %}
+      <tr>
+       
+        <td>{{i.name2}}</td>
+        <td><img src="{{i.image2.url}}" style="height:60px;width:100px"></td>
+        <td>{{i.price}}</td>
+        <td>{{i.description}}</td>
+       
+        <td>{{i.saloon}}</td>
+        <td><a href="{% url 'edit2' id=i.id %}"><button>edit</button></a></td>
+        <td><a href="{% url 'delete2' id=i.id %}"><button>delete</button></a></td>
+      </tr>
+      {% endfor %}
+      </tr>
+    </tbody>
+  </table>
+  
+  {% endblock %}

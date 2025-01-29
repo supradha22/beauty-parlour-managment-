@@ -1,0 +1,77 @@
+
+{% extends "user.html" %}
+
+{% block contends %}
+
+<section class="bg0 p-t-23 p-b-140">
+
+  <div class="container">
+
+  
+      <div class="row isotope-grid">
+
+          {% for i in data %} 
+
+          <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item">
+
+              <!-- Block2 -->
+
+              <div class="block2">
+
+                  <div class="block2-pic hov-img0">
+
+                      <img src="{{i.image.url}}" alt="IMG-PRODUCT" style="height:200px;width:260px">
+
+
+
+                      
+
+                  </div>
+             
+
+
+
+                  <div class="block2-txt flex-w flex-t p-t-14">
+
+                      <div>
+
+                          <a
+href=""
+class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+
+                              {{i.name}}
+
+                          </a><br><br>
+                          <a href="{% url 'card1' branch=i.name %}" class="btn btn-primary">view saloons</a>
+
+                              
+  
+                          </a>
+
+
+
+                      </div>
+
+
+
+                      
+
+                  </div>
+
+              </div>
+
+          </div>
+
+          {% endfor %}
+
+      </div>
+
+  
+
+  </div>
+
+
+
+</section>
+
+  {% endblock %}

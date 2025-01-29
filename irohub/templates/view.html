@@ -1,0 +1,83 @@
+
+{% extends "user.html" %}
+
+{% block contends %}
+
+{% load static %}
+
+<section class="bg0 p-t-23 p-b-150">
+
+    <div class="container">
+
+        <h1><center>services</center></h1>
+
+      <center> <div class="row isotope-grid">
+
+            {% for i in data2 %} 
+
+           <center> <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item">
+
+                <!-- Block2 -->
+             
+                <div class="block2">
+
+                    <div class="block2-pic hov-img0">    
+ 
+                     <center><img src="{{i.image2.url}}" alt="IMG-PRODUCT" style="height:200px;width:260px"></center>   
+
+
+                        
+
+                    </div>
+               
+
+
+
+                    <div class="block2-txt flex-w flex-t p-t-14">
+
+                        <div>
+
+                            <a
+href=""
+class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+
+{{i.name2}} 
+                                <div class="card-title">{{i.description}}
+                                    <div class="card-title">{{i.price}}
+                                    <br><br><br>
+
+                                    <a href="{% url 'bookinginfo' id=i.id %}" class="btn btn-primary">book now </a>
+                
+                                
+    
+                           
+                        </div>
+                    </div>
+
+                </div>
+
+            </div></center>
+            <h1><b>booking time</b></h1>
+            <ul><i>9 to 12 am</i> </ul>
+            <ul><i>12:30 to 2:30 pm</i></ul>
+            <ul><i>3 to 5 pm</i></ul>
+
+</div></div>
+
+    
+            {% endfor %}
+
+        </center>
+
+
+
+</section>
+
+
+
+
+
+
+
+{% endblock %}
+

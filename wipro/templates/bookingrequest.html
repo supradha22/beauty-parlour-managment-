@@ -1,0 +1,43 @@
+{% extends 'admin.html' %}
+{% block contends %}
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>email</th>
+        <th>phone number</th>
+        <th>service</th>
+        <th>image</th>
+        <th>price</th>
+        <th>booking date</th>
+        <th>booking time</th>
+        <th>approved</th>
+        <th>declined</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        
+        {% for i in data %}
+      <tr>
+       
+        <td>{{i.userreg.name}}</td>
+       <td>{{i.userreg.email}}</td>
+       <td>{{i.userreg.number}}</td>
+       <td>{{i.userser.name2}}</td>
+       <td><img src="{{i.userser.image2.url}}" style="height:60px;width:100px"></td>
+       <td>{{i.userser.price}}</td>
+       <td>{{i.bookingdate}}</td>
+       <td>{{i.bookingtime}}</td>
+       <td><a href="{% url 'approve' id=i.id %}"><button class="w-100 btn form-control border-secondary py-4 bg-success text-success ">approved</button></a>
+       <td><a href="{% url 'declined' id=i.id %}"><button class="w-100 btn form-control border-secondary py-4 bg-danger text-danger ">declined</button></a>
+
+
+      </tr>
+      {% endfor %}
+      </tr>
+    </tbody>
+  </table>
+  
+  {% endblock %}

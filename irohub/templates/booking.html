@@ -1,0 +1,18 @@
+{% extends 'user.html' %}
+{% block contends %}
+{% for i in data2 %}
+    <form action="{% url 'bookservice' id=i.id %}" method="post" class=" position-relative">
+        {% csrf_token %}
+    <input type="text" class="w-100 form-control border-0 py-3 mb-4" placeholder="user Name" name=" user name" value="{{request.session.username_u}}">
+    <input type="email" class="w-100 form-control border-0 py-3 mb-4" placeholder="user email" name="user email" value="{{request.session.email_u}}">
+    <input type="number" class="w-100 form-control border-0 py-3 mb-4" placeholder="user number " name="user number" value="{{request.session.phonenumber_u}}">
+    <input type="text" class="w-100 form-control border-0 py-3 mb-4" placeholder="service" name="service" value="{{i.name2}}">
+    <input type="text" class="w-100 form-control border-0 py-3 mb-4" placeholder="saloon name" name="saloon name" value="{{i.saloon}}">
+    <input type="number" class="w-100 form-control border-0 py-3 mb-4" placeholder="price" name="price" value="{{i.price}}"> 
+    <input type="date" class="w-100 form-control border-0 py-3 mb-4" placeholder="booking date" name="bookingdate"> 
+    <input type="time" class="w-100 form-control border-0 py-3 mb-4" placeholder="booking time" name="bookingtime"> 
+    <button class="w-100 btn form-control border-secondary py-3 bg-white text-primary " type="submit">Submit</button>
+   
+</form>
+{% endfor %}
+{% endblock %}
